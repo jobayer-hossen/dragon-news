@@ -21,6 +21,7 @@ const RightNav = () => {
     <QZone></QZone>
     <div>
     <img src={bg} alt="" />
+    
     </div>
     </div>
 
