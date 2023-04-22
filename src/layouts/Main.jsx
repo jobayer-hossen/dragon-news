@@ -5,11 +5,13 @@ import Footer from "../pages/sheard/footer/Footer";
 import { Col, Container, Row} from "react-bootstrap";
 import LeftNav from "../pages/sheard/leftNav/LeftNav";
 import RightNav from "../pages/sheard/rightNav/RightNav";
+import NavigationBar from "../pages/sheard/NavigationBar";
 
 const Main = () => {
   return (
     <div>
       <Header></Header>
+      <NavigationBar></NavigationBar>
       <Container>
         <Row>
           <Col lg={3}> <LeftNav></LeftNav>

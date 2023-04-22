@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link, useLoaderData } from "react-router-dom";
+import EditorInside from "../editorinside/EditorInside";
 
 const News = () => {
   const news = useLoaderData();
@@ -18,6 +19,7 @@ const News = () => {
           <Link to={`/category/${category_id}`} ><Button variant="danger">Go somewhere</Button></Link>
         </Card.Body>
       </Card>
+      <EditorInside></EditorInside>
     </div>
   );
 };
