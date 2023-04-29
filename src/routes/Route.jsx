@@ -1,12 +1,14 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main";
-import Home from "../pages/Home/Home/Home";
+
 import Category from "../pages/Home/category/Category";
 import NewsLayout from "../layouts/NewsLayout";
 import News from "../pages/news/news/News";
 import LoginLayout from "../layouts/LoginLayout";
 import LogIn from "../pages/login/LogIn";
 import Resister from "../pages/resister/Resister";
+import PrivateRoute from "./PrivateRoute";
+import Tarms from "./Tarms";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path:'/resister',
                 element:<Resister></Resister>
+            },
+            {
+                path:'/terms',
+                element:<Tarms></Tarms>
             }
         ]
     },
@@ -51,7 +57,7 @@ const router = createBrowserRouter([
         children:[
             {
                 path:':id',
-                element:<News></News>,
+                element: <PrivateRoute><News></News></PrivateRoute> ,
                 loader :({params}) => fetch(`http://localhost:5000/news/${params.id}`)
             }
         ]
